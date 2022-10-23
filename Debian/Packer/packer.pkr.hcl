@@ -22,7 +22,11 @@ variable "output_directory" {
 
 locals {
     vm_name = var.vm_name
-    arch = var.arch
+    cpu_type = {
+        "arm64" = "arm64"
+        "x86_64" = "amd64"
+    }
+    arch = local.cpu_type[var.arch]
     box_version = var.box_version
     debian_version = var.debian_version
     http_directory = "${path.root}/http"
