@@ -51,7 +51,7 @@ locals {
             "grub-installer/bootdev=/dev/sda <wait>",
             "<f10><wait>"
         ]
-        "intel64" = [
+        "x86_64" = [
             "<esc><wait10s>",
             "install <wait>",
             "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
